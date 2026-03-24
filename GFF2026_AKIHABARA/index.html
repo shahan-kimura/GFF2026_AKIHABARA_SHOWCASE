@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GFF2026 AKIHABARA ゲームソフト部門 — ゲームカレッジ秋葉原校 ゲームソフト 学年末成果発表">
+  <title>AKIHABARA SHOWCASE — GFF2026</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Video Background -->
+  <div class="video-bg-container">
+    <video class="video-bg" id="bgVideo" autoplay muted loop playsinline></video>
+  </div>
+  <div class="vignette-overlay"></div>
+
+  <!-- Mouse Reveal layer -->
+  <div class="mouse-reveal-layer">
+    <video class="mouse-reveal-video" id="revealVideo" autoplay muted loop playsinline></video>
+  </div>
+
+  <!-- FUI Overlay -->
+  <div class="fui-overlay" id="fuiOverlay">
+    <div class="fui-corner top-left">
+      SEC://AKIHABARA_2026<br>
+      STATUS: <span id="fuiStatus">ENERGIZED</span><br>
+      COORD: <span id="fuiCoord">X:0000 Y:0000</span>
+    </div>
+    <div class="fui-corner top-right">
+      FPS: <span id="fuiFps">60</span><br>
+      FRAME: <span id="fuiFrame">000000</span><br>
+      MODE: NAV_HUB
+    </div>
+    <div class="fui-corner bottom-left">
+      PROJECT: GFF2026<br>
+      DEPT: GAME SOFTWARE<br>
+      TEAMS: 8 ACTIVE
+    </div>
+    <div class="fui-corner bottom-right">
+      IDLE: <span id="fuiIdle">00s</span>/30s<br>
+      <span id="fuiTime"></span>
+    </div>
+  </div>
+
+  <!-- Auto-switch progress bar -->
+  <div class="auto-switch-bar" id="autoSwitchBar" style="display:none"></div>
+
+  <!-- Glitch Transition -->
+  <div class="glitch-overlay" id="glitchOverlay"></div>
+
+  <!-- ===== PAGE CONTENT ===== -->
+  <div class="page-container page-enter">
+    <section class="hero-section">
+
+      <!-- Title -->
+      <h1 class="site-title" id="siteTitle" data-text="GFF 2026 AKIHABARA"></h1>
+      <p class="site-subtitle" id="siteSubtitle"></p>
+
+      <!-- Switch to AI Section -->
+      <a href="../GFF_AI/index.html" class="section-switch-banner">
+        <span class="badge">AI部門</span>
+        SWITCH TO AI SECTION &nbsp;→
+      </a>
+
+      <!-- Team Grid -->
+      <div class="team-grid">
+
+        <!-- Team 1 -->
+        <a href="team1.html" class="team-card">
+          <div class="team-card-badge">01</div>
+          <video class="team-card-thumbnail" src="Team1/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 01</span>
+            <h2 class="team-card-title">BAT BREAK</h2>
+          </div>
+        </a>
+
+        <!-- Team 2 -->
+        <a href="team2.html" class="team-card">
+          <div class="team-card-badge">02</div>
+          <video class="team-card-thumbnail" src="Team2/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 02</span>
+            <h2 class="team-card-title">Quick The Fury</h2>
+          </div>
+        </a>
+
+        <!-- Team 3 -->
+        <a href="team3.html" class="team-card">
+          <div class="team-card-badge">03</div>
+          <video class="team-card-thumbnail" src="Team3/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 03</span>
+            <h2 class="team-card-title">CREEPY CHATEU</h2>
+          </div>
+        </a>
+
+        <!-- Team 4 -->
+        <a href="team4.html" class="team-card">
+          <div class="team-card-badge">04</div>
+          <video class="team-card-thumbnail" src="Team4/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 04</span>
+            <h2 class="team-card-title">TheLastBet</h2>
+          </div>
+        </a>
+
+        <!-- Team 5 -->
+        <a href="team5.html" class="team-card">
+          <div class="team-card-badge">05</div>
+          <video class="team-card-thumbnail" src="Team5/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 05</span>
+            <h2 class="team-card-title">ヤギバイ</h2>
+          </div>
+        </a>
+
+        <!-- Team 6 -->
+        <a href="team6.html" class="team-card">
+          <div class="team-card-badge">06</div>
+          <video class="team-card-thumbnail" src="Team6/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 06</span>
+            <h2 class="team-card-title">BULLET OR TREAT</h2>
+          </div>
+        </a>
+
+        <!-- Team 7 -->
+        <a href="team7.html" class="team-card">
+          <div class="team-card-badge">07</div>
+          <video class="team-card-thumbnail" src="Team7/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 07</span>
+            <h2 class="team-card-title">記憶の残響</h2>
+          </div>
+        </a>
+
+        <!-- Team 8 -->
+        <a href="team8.html" class="team-card">
+          <div class="team-card-badge">08</div>
+          <video class="team-card-thumbnail" src="Team8/background.mp4" muted loop playsinline preload="none"></video>
+          <div class="team-card-overlay">
+            <span class="team-card-number">Team 08</span>
+            <h2 class="team-card-title">NayoucoPrologue</h2>
+          </div>
+        </a>
+
+      </div><!-- /team-grid -->
+    </section>
+  </div><!-- /page-container -->
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      GFFPortfolio.init({
+        pageType: 'home',
+        videos: [
+          'Team1/background.mp4',
+          'Team2/background.mp4',
+          'Team3/background.mp4',
+          'Team4/background.mp4',
+          'Team5/background.mp4',
+          'Team6/background.mp4',
+          'Team7/background.mp4',
+          'Team8/background.mp4'
+        ]
+      });
+
+      GFFPortfolio.typeText(document.getElementById('siteTitle'), 'GFF 2026 AKIHABARA', 55);
+      setTimeout(() => {
+        GFFPortfolio.typeText(document.getElementById('siteSubtitle'), 'GAME COLLEGE AKIHABARA | GAME SOFTWARE SHOWCASE', 28);
+      }, 1200);
+    });
+  </script>
+</body>
+</html>

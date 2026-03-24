@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Team 06 — 桜里 | GFF2026 AI Portfolio Showcase">
+    <title>Team 06 — 桜里 | AI Portfolio Showcase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="video-bg-container">
+        <video class="video-bg" id="bgVideo" autoplay muted loop playsinline></video>
+    </div>
+    <div class="vignette-overlay"></div>
+
+    <!-- Mouse Reveal Layer -->
+    <div class="mouse-reveal-layer">
+        <video class="mouse-reveal-video" id="revealVideo" autoplay muted loop playsinline></video>
+    </div>
+
+    <!-- FUI Overlay -->
+    <div class="fui-overlay" id="fuiOverlay">
+        <div class="fui-corner top-left" id="fuiTL">
+            SYS://GFF_2026_AI<br>
+            STATUS: <span id="fuiStatus">SCANNING</span><br>
+            COORD: <span id="fuiCoord">X:0000 Y:0000</span>
+        </div>
+        <div class="fui-corner top-right" id="fuiTR">
+            FPS: <span id="fuiFps">60</span><br>
+            FRAME: <span id="fuiFrame">000000</span><br>
+            MODE: TEAM_VIEW
+        </div>
+        <div class="fui-corner bottom-left" id="fuiBL">
+            NODE: TEAM_06<br>
+            ASSET: 桜里.mp4<br>
+            STREAM: <span id="fuiStream">ACTIVE</span>
+        </div>
+        <div class="fui-corner bottom-right" id="fuiBR">
+            IDLE: <span id="fuiIdle">00s</span>/30s<br>
+            AUTO_NAV: <span id="fuiAutoNav">ENABLED</span><br>
+            <span id="fuiTime"></span>
+        </div>
+    </div>
+
+    <!-- Glitch Transition Overlay -->
+    <div class="glitch-overlay" id="glitchOverlay">
+        <div class="glitch-line"></div>
+        <div class="glitch-line"></div>
+        <div class="glitch-line"></div>
+    </div>
+
+    <!-- Auto Switch Timer Bar -->
+    <div class="auto-switch-bar" id="autoSwitchBar"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <a href="index.html" class="nav-home-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            HOME
+        </a>
+        <div class="nav-team-links">
+            <a href="team1.html" class="nav-team-link">01</a>
+            <a href="team2.html" class="nav-team-link">02</a>
+            <a href="team4.html" class="nav-team-link">04</a>
+            <a href="team5.html" class="nav-team-link">05</a>
+            <a href="team6.html" class="nav-team-link active">06</a>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="page-container page-enter">
+        <section class="team-header">
+            <h1 class="team-name" id="teamName"></h1>
+            <h2 class="team-work-title" id="workTitle"></h2>
+            <p class="team-concept" id="teamConcept"></p>
+            <div class="scroll-indicator">
+                <span>SCROLL</span>
+                <svg viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg>
+            </div>
+        </section>
+
+        
+    <section class="workflow-section">
+      <h3 class="workflow-section-title" style="font-size: 1.2rem; margin-bottom: 24px;">— CONCEPT WORKFLOW —</h3>
+      <div class="workflow-step">
+        <div class="workflow-step-num">PRODUCTION PROCESS</div>
+        <p class="workflow-step-desc">このチームのAI_3Dステージ制作におけるコンセプト検証とアセット生成の過程（ワークフロー）です。生成AIを用いてイメージを具体化し、3D空間へと落とし込みました。</p>
+        <div class="workflow-gallery">
+          <img src="Team6/ConceptWorkFlow/2025-11-10_161726.png" alt="Concept 1" class="workflow-image" loading="lazy">
+          <img src="Team6/ConceptWorkFlow/2025-11-17_123646.png" alt="Concept 2" class="workflow-image" loading="lazy">
+          <img src="Team6/ConceptWorkFlow/2025-11-17_171517.png" alt="Concept 3" class="workflow-image" loading="lazy">
+          <img src="Team6/ConceptWorkFlow/Generated_Image_November_10_2025_-_3_03PM.png" alt="Concept 4" class="workflow-image" loading="lazy">
+        </div>
+      </div>
+    </section>
+    
+    <section class="gallery-section">
+            <p class="gallery-section-title">— CAPTURED FRAMES —</p>
+            <div class="gallery-grid" id="galleryGrid"></div>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">[ESC] CLOSE</button>
+        <img src="" alt="Lightbox Image">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            GFFPortfolio.init({
+                pageType: 'team',
+                videos: ['Team6/GFF2026_Ai部門参加作品｢桜里｣ (1).mp4'],
+                teamOrder: ['team1', 'team2', 'team4', 'team5', 'team6'],
+                currentTeam: 'team6'
+            });
+
+            GFFPortfolio.typeText(document.getElementById('teamName'), 'TEAM 06', 80);
+            setTimeout(() => {
+                GFFPortfolio.typeText(document.getElementById('workTitle'), '桜里', 100);
+            }, 800);
+            setTimeout(() => {
+                GFFPortfolio.typeText(document.getElementById('teamConcept'),
+                    '桜が舞い散る幻想の里。日本の美意識とAI技術が融合した、儚くも美しい3Dステージ。春風に揺れる桜の花びらが創り出す、夢のような世界をお楽しみください。', 30);
+            }, 1800);
+
+            const grid = document.getElementById('galleryGrid');
+            for (let i = 1; i <= 12; i++) {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.innerHTML = `
+          <img src="Team6/frames/frame_${i}.jpg" alt="Frame ${i}" loading="lazy">
+          <div class="gallery-item-overlay">FRAME_${String(i).padStart(3, '0')} // CAPTURED</div>
+        `;
+                grid.appendChild(item);
+            }
+        });
+    </script>
+</body>
+
+</html>

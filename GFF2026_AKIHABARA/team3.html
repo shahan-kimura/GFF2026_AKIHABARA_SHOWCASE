@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team 03 — CREEPY CHATEU | GFF2026 AKIHABARA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="video-bg-container"><video class="video-bg" id="bgVideo" autoplay muted loop playsinline></video></div>
+  <div class="vignette-overlay"></div>
+  <div class="mouse-reveal-layer"><video class="mouse-reveal-video" id="revealVideo" autoplay muted loop playsinline></video></div>
+  <div class="fui-overlay" id="fuiOverlay">
+    <div class="fui-corner top-left">SYS://GFF_2026_AK<br>STATUS: <span id="fuiStatus">SCANNING</span><br>COORD: <span id="fuiCoord">X:0000 Y:0000</span></div>
+    <div class="fui-corner top-right">FPS: <span id="fuiFps">60</span><br>FRAME: <span id="fuiFrame">000000</span><br>MODE: TEAM_VIEW</div>
+    <div class="fui-corner bottom-left">NODE: TEAM_03<br>TITLE: CREEPY CHATEU<br>STREAM: <span id="fuiStream">ACTIVE</span></div>
+    <div class="fui-corner bottom-right">IDLE: <span id="fuiIdle">00s</span>/30s<br><span id="fuiTime"></span></div>
+  </div>
+  <div class="glitch-overlay" id="glitchOverlay"></div>
+  <div class="auto-switch-bar"></div>
+  <nav class="nav-bar">
+    <a href="index.html" class="nav-home-btn">← HOME</a>
+    <div class="nav-team-links">
+      <span class="nav-team-label">TEAMS:</span>
+      <a href="team1.html" class="nav-team-link">01</a>
+      <a href="team2.html" class="nav-team-link">02</a>
+      <a href="team3.html" class="nav-team-link active">03</a>
+      <a href="team4.html" class="nav-team-link">04</a>
+      <a href="team5.html" class="nav-team-link">05</a>
+      <a href="team6.html" class="nav-team-link">06</a>
+      <a href="team7.html" class="nav-team-link">07</a>
+      <a href="team8.html" class="nav-team-link">08</a>
+    </div>
+  </nav>
+  <div class="page-container page-enter">
+    <section class="team-header">
+      <div class="team-num-display">03</div>
+      <h1 class="team-name" id="teamName"></h1>
+      <h2 class="team-work-title" id="workTitle"></h2>
+      <p class="team-concept" id="teamConcept"></p>
+      <div class="action-buttons">
+        <button class="action-btn" onclick="openModal('proposal')">VIEW PROPOSAL (PDF)</button>
+        <button class="action-btn secondary" onclick="openModal('video')">WATCH FULL PV</button>
+        <a class="action-btn download" id="downloadBtn" href="#" target="_blank" rel="noopener" style="display:none;">DOWNLOAD GAME</a>
+      </div>
+      <div class="prev-next-nav">
+        <a href="team2.html" class="prev-next-btn" id="prevTeamBtn">← TEAM 02</a>
+        <a href="team4.html" class="prev-next-btn" id="nextTeamBtn">TEAM 04 →</a>
+      </div>
+    </section>
+  </div>
+  <div class="modal-overlay" id="proposalModal">
+    <div class="modal-content">
+      <div class="modal-header"><span>PROPOSAL.PDF — TEAM 03 CREEPY CHATEU</span><button class="modal-close" onclick="closeModal()">[ CLOSE ]</button></div>
+      <div class="modal-body"><iframe src="Team3/proposal.pdf#toolbar=0&view=FitH" width="100%" height="100%" style="border:none;"></iframe></div>
+    </div>
+  </div>
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal-content" style="background:#000;">
+      <div class="modal-header"><span>PV — TEAM 03 CREEPY CHATEU</span><button class="modal-close" onclick="closeModal()">[ CLOSE ]</button></div>
+      <div class="modal-body"><video src="Team3/background.mp4" controls style="width:100%;height:100%;background:#000;"></video></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      GFFPortfolio.init({ pageType: 'team', videos: ['Team3/background.mp4'], currentTeam: 'team3' });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+:root {
+    --bg-color: #f0f0f0;
+    --accent-color: #ffcc00; /* AKIHABARA Cyber Yellow */
+    --accent-color-alt: #ff0055; /* Neo-pink */
+    --border-width: 6px;
+    --shadow-offset: 10px;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.glitch-text {
+    font-size: clamp(2rem, 8vw, 5rem);
+    font-weight: 900;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    background: var(--black);
+    padding: 0.5rem 2rem;
+    border: var(--border-width) solid var(--black);
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--black);
+    position: relative;
+    display: inline-block;
+}
+
+.subtitle {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black);
+    background: white;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 4px solid var(--black);
+    box-shadow: 6px 6px 0px 0px var(--black);
+}
+
+.action-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.neo-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    border: var(--border-width) solid var(--black);
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-offset) var(--shadow-offset) 0px 0px var(--black);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-width: 280px;
+    text-decoration: none;
+    color: var(--black);
+    font-family: inherit;
+    font-weight: 900;
+}
+
+.neo-btn:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: calc(var(--shadow-offset) + 4px) calc(var(--shadow-offset) + 4px) 0px 0px var(--black);
+    background: var(--accent-color);
+}
+
+.neo-btn .icon {
+    font-size: 1.5rem;
+    background: var(--black);
+    color: var(--accent-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border: var(--border-width) solid var(--black);
+    box-shadow: 20px 20px 0px 0px var(--black);
+}
+
+#modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 204, 0, 0.8);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.hidden { display: none !important; }
+
+.modal-content {
+    width: 90%; max-width: 1200px; height: 80vh;
+    position: relative; padding: 1rem;
+}
+
+.close-btn {
+    position: absolute; top: -20px; right: -20px;
+    background: var(--accent-color-alt); color: white;
+    border: 4px solid var(--black); font-size: 2rem;
+    cursor: pointer; box-shadow: 4px 4px 0px 0px var(--black);
+    width: 50px; height: 50px;
+}
+
+.view-content { width: 100%; height: 100%; }
+#large-video { width: 100%; height: 100%; background: black; }
+
+.main-footer {
+    position: fixed; bottom: 2rem; right: 2rem;
+    display: flex; gap: 1rem;
+}
+
+.tag {
+    background: var(--accent-color-alt); color: white;
+    padding: 0.5rem 1rem; font-weight: 900;
+    border: 4px solid var(--black); box-shadow: 6px 6px 0px 0px var(--black);
+    transform: rotate(2deg);
+}
+.tag:nth-child(2) { background: var(--accent-color); color: black; transform: rotate(-3deg); }
